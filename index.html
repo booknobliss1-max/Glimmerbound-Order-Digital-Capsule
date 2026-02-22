@@ -52,6 +52,7 @@
   <a class="enter-btn" href="https://booknobliss1-max.github.io/AnimeWorldBuild-digital-studio-lab/">Glimmerbound Order</a>
 </header>
 
+
 <!-- ✨ Luminous Ledger — Glimmerbound Edition ✨ -->
 <section class="luminous-ledger" style="
   max-width: 900px;
@@ -78,7 +79,7 @@
   </p>
 
   <!-- Glimmer Pool Visualization -->
-  <div style="
+  <div class="glimmer-pool" style="
     height: 160px;
     background: radial-gradient(circle at center, #4fc3ff33, #0b1a24);
     border: 1px solid #4fc3ff55;
@@ -87,12 +88,11 @@
     position: relative;
     overflow: hidden;
   ">
-    <!-- (Optional: glowing dots added later with JS) -->
   </div>
 
   <!-- Ritualized Transaction Buttons -->
   <div style="text-align:center; margin-bottom: 30px;">
-    <button style="
+    <button onclick="releaseLantern()" style="
       padding: 12px 28px;
       margin: 10px;
       background: #ffe9b3;
@@ -126,9 +126,45 @@
 
 </section>
 
-  <footer>
+
+<footer>
   #DomedLivingSeries • #DomesandDashboards • #HolisticVision
 </footer>
+
+
+<!-- Lantern Ritual Script -->
+<script>
+function releaseLantern() {
+  // 1. Open Twitter share window
+  const text = encodeURIComponent("I released a lantern in the Glimmerbound Order ✨ #LanternEra #GlimmerboundOrder");
+  window.open("https://twitter.com/intent/tweet?text=" + text, "_blank");
+
+  // 2. Create glowing lantern animation in the pool
+  const pool = document.querySelector('.glimmer-pool');
+  const lantern = document.createElement('div');
+  lantern.style.position = 'absolute';
+  lantern.style.width = '10px';
+  lantern.style.height = '10px';
+  lantern.style.borderRadius = '50%';
+  lantern.style.background = '#ffe9b3';
+  lantern.style.boxShadow = '0 0 12px #ffe9b3';
+  lantern.style.left = Math.random() * 90 + '%';
+  lantern.style.bottom = '0px';
+  lantern.style.opacity = '1';
+  lantern.style.transition = 'all 3s ease-out';
+
+  pool.appendChild(lantern);
+
+  setTimeout(() => {
+    lantern.style.bottom = '140px';
+    lantern.style.opacity = '0';
+  }, 50);
+
+  setTimeout(() => {
+    lantern.remove();
+  }, 3000);
+}
+</script>
 
 </body>
 </html>
